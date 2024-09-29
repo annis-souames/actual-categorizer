@@ -2,6 +2,7 @@ from actual import Actual
 from actual.queries import get_transactions, get_categories
 from llm import OllamaEngine, PromptGenerator
 from config import Config
+from transactions.csvreader import CSVReader
 
 cfg = Config(env_path=".env")
 
@@ -13,8 +14,13 @@ actual_params = {
     "data_dir": "./data",
 }
 
+TRANSACTION_PATH = "transactions/statement.csv"
+
+transactions_reader = CSVReader(TRANSACTION_PATH)
+transacts = transactions_reader.get_transactions(["Description"])
+
+
 cats = []
-transacts = []
 with Actual(**actual_params) as actual:
     cats = [c.name for c in get_categories(actual.session)]
     transacts = [t.imported_description for t in get_transactions(actual.session)]

@@ -15,6 +15,10 @@ class PromptGenerator():
         prompt = f"""   
         Given the following transactions: {self.transactions}, 
         categorize each transaction into one of the following categories: {self.categories}.
+        Rules:
+        You can assign multiple transactions to the same category. 
+        It's fine if you don't use all the mentioned categories.
+        One transaction can have only one category.
         Return the response as a list of key-values formatted in JSON like this for all the transactions:
         {{
             'data': [
