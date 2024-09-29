@@ -33,8 +33,8 @@ class OllamaEngine():
     def parse_response(self, response: requests.Response):
         # Try to parse the response JSON, if schema is wrong then fail and return an error message
         try:
-            api_response = json.loads(response.json())
+            api_response = response.json()
             generated_resp = json.loads(api_response['response'])
-            return generated_resp
+            return generated_resp["data"]
         except json.JSONDecodeError:
             return {"error": "Invalid JSON response from server."}
