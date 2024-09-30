@@ -62,7 +62,7 @@ The manual setup is best if you have some basic CLI and pip understanding, you w
 - Run the app with `streamlit run app.py`.
 
 
-## Configuration
+## Configuration (Important)
 
 Before starting to use the app, you will need to configure some env variables defined in .env file. Start by copying the .env.example and fill the values for these env variable:
 
