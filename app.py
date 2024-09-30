@@ -18,7 +18,8 @@ actual_params = {
     "data_dir": "./data",
 }
 
-st.title("Transaction Categorization App")
+st.title("Actual Budget Categorizer App")
+st.write("This app uses the OLLAMA language model to categorize transactions \n from a CSV file and saves them in a new CSV file.")
 
 # Upload CSV file
 uploaded_file = st.file_uploader("Upload your CSV file", type=['csv'])
