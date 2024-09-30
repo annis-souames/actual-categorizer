@@ -23,9 +23,8 @@ This project is built in Python
 - **Python Packages:**
   - `streamlit`
   - `pandas`
-  - `actual` (custom module)
-  - `llm` (custom module)
-  - `config` (custom module)
+  - `requests`
+  - `actualpy`
 - **Ollama Server:** Install and run the Ollama server for LLM capabilities.
 - **Actual Budget Server:** If using with Actual Budget, ensure the Actual server is running and accessible.
 
